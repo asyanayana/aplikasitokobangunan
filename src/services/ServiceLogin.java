@@ -21,11 +21,12 @@ public class ServiceLogin {
     public String login(String userName, String password){
         
         try {
-            sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            sql = "SELECT * FROM user WHERE id = ? AND password = ?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
             resultSet = preparedStatement.executeQuery();
+            preparedStatement.close();
             if (resultSet.next()){
                 return "BERHASIL";
             }

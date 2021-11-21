@@ -5,8 +5,6 @@
  */
 package aplikasitokobangunan;
 
-import menu.FormLandingPage;
-
 /**
  *
  * @author Khanza
@@ -17,8 +15,7 @@ public class Aplikasitokobangunan {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FormLandingPage formLandingPage = new FormLandingPage();
-        formLandingPage.setVisible(true);
+        // TODO code application logic here
     }
     
 }
