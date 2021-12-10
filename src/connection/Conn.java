@@ -13,7 +13,7 @@ public class Conn {
     public static Connection getConnection() { // Membuat getter dari connection
 
         try { // try di gunakan setiap fungsi yang berhubungan dengan sql
-            String url = "jdbc:mysql://localhost/yana"; // url dari sql yang ada di xampp
+            String url = "jdbc:mysql://localhost/aplikasibangunan"; // url dari sql yang ada di xampp
             String user = "root"; // user dari sql
             String password = ""; // password dari sql
 
