@@ -1,7 +1,6 @@
 package menu;
 
 import javax.swing.table.DefaultTableModel;
-import services.ServiceData;
 import services.ServiceLoadData;
 
 public class FormLaporan extends javax.swing.JFrame {
@@ -10,14 +9,24 @@ public class FormLaporan extends javax.swing.JFrame {
     private DefaultTableModel tableSupplier, tableMerek, tableJenis, tableBarang, tableTransaksi;
     private String dbTableNameSupplier, dbTableNameMerek, dbTableNameJenis, dbTableNameBarang, dbTableNameTransaksi;
     private String[] dbTableDatasSupplier, dbTableDatasMerek, dbTableDatasJenis, dbTableDatasBarang, dbTableDatasTransaksi;
+    private String buttonEnable;
 
-    public FormLaporan() {
+    public String getButtonEnable() {
+        return buttonEnable;
+    }
+
+    public void setButtonEnable(String buttonEnable) {
+        this.buttonEnable = buttonEnable;
+    }
+
+    public FormLaporan(String buttonEnable) {
         initComponents();
         cPilihan.addItem("Supplier");
         cPilihan.addItem("Merek");
         cPilihan.addItem("Jenis");
         cPilihan.addItem("Barang");
         cPilihan.addItem("Transaksi");
+        this.buttonEnable = buttonEnable;
     }
 
     @SuppressWarnings("unchecked")
@@ -254,7 +263,7 @@ public class FormLaporan extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonLaporanActionPerformed
 
     private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
-        FormHalamanUtama formHalamanUtama = new FormHalamanUtama();
+        FormHalamanUtama formHalamanUtama = new FormHalamanUtama(getButtonEnable());
         formHalamanUtama.setVisible(true);
         formHalamanUtama.userName.setText(userName.getText());
         this.setVisible(false);
@@ -266,13 +275,13 @@ public class FormLaporan extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormLaporan().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FormLaporan().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonKembali;

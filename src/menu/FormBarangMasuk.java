@@ -13,8 +13,17 @@ public class FormBarangMasuk extends javax.swing.JFrame {
     private final String dbTableName;
     private final String[] dbTableDatas;
     private String[] dbDatas;
+    private String buttonEnable;
 
-    public FormBarangMasuk() { // Membuat constructor yang merupakan keunggulan dari java OOP
+    public String getButtonEnable() {
+        return buttonEnable;
+    }
+
+    public void setButtonEnable(String buttonEnable) {
+        this.buttonEnable = buttonEnable;
+    }
+
+    public FormBarangMasuk(String butonEnable) { // Membuat constructor yang merupakan keunggulan dari java OOP
         initComponents(); // Memanggil Class Java Swing yang telah di buat fungsi sebelumnya
         textId.setEditable(false);
         serviceData = new ServiceData(); // Memanggil class ServiceRegister dengan membuat variable serviceRegister yang baru
@@ -43,6 +52,7 @@ public class FormBarangMasuk extends javax.swing.JFrame {
         serviceData.showCombo(cSupplier, "supplier", "id", "nama_supplier");
         serviceData.showCombo(cMerek, "merek", "id", "nama_merek");
         serviceData.showCombo(cJenis, "jenis", "id", "nama_jenis");
+        this.buttonEnable = butonEnable;
     }
 
     private void emptyText() { // Fungsi untuk mengosongkan TextFiled
@@ -387,7 +397,7 @@ public class FormBarangMasuk extends javax.swing.JFrame {
     }//GEN-LAST:event_tableInputMouseClicked
 
     private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
-        FormHalamanUtama formHalamanUtama = new FormHalamanUtama();
+        FormHalamanUtama formHalamanUtama = new FormHalamanUtama(getButtonEnable());
         formHalamanUtama.setVisible(true);
         formHalamanUtama.userName.setText(userName.getText());
         this.setVisible(false);
@@ -399,13 +409,13 @@ public class FormBarangMasuk extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormBarangMasuk().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FormBarangMasuk().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonEdit;

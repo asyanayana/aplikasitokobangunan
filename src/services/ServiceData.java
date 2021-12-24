@@ -17,9 +17,14 @@ public class ServiceData {
     public ServiceData() { // Membuat constructor yang merupakan keunggulan dari java OOP
         connection = Conn.getConnection(); // Memanggil class connection
     }
+    
+    public String loadId(){
+        return null;
+    }
 
     public String checkDatas(String[] dbDatas) {
         for (String dbData : dbDatas) {
+            System.out.println(dbData);
             if (dbDatas[0].isEmpty()) {
                 break;
             } else if (dbData.isEmpty()) { // fungsi untuk agar data tidak boleh kosong

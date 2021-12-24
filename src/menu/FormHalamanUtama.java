@@ -1,7 +1,7 @@
 package menu;
 
 public class FormHalamanUtama extends javax.swing.JFrame {
-    
+
     private String buttonEnable;
 
     public String getButtonEnable() {
@@ -12,8 +12,45 @@ public class FormHalamanUtama extends javax.swing.JFrame {
         this.buttonEnable = buttonEnable;
     }
 
-    public FormHalamanUtama() {
+    @SuppressWarnings("fallthrough")
+    public FormHalamanUtama(String buttonEnable) {
         initComponents();
+        switch (buttonEnable) {
+            case "Admin":
+                buttonBarangMasuk.setEnabled(true);
+                buttonJenis.setEnabled(false);
+                buttonLaporan.setEnabled(true);
+                buttonMerek.setEnabled(true);
+                buttonSupplier.setEnabled(true);
+                buttonTransaksi.setEnabled(true);
+                break;
+            case "Gudang":
+                buttonBarangMasuk.setEnabled(false);
+                buttonJenis.setEnabled(false);
+                buttonLaporan.setEnabled(false);
+                buttonMerek.setEnabled(false);
+                buttonSupplier.setEnabled(false);
+                buttonTransaksi.setEnabled(true);
+                break;
+            case "Owner":
+                buttonBarangMasuk.setEnabled(true);
+                buttonJenis.setEnabled(true);
+                buttonLaporan.setEnabled(true);
+                buttonMerek.setEnabled(true);
+                buttonSupplier.setEnabled(true);
+                buttonTransaksi.setEnabled(true);
+                break;
+            default:
+                buttonBarangMasuk.setEnabled(false);
+                buttonJenis.setEnabled(false);
+                buttonLaporan.setEnabled(false);
+                buttonMerek.setEnabled(false);
+                buttonSupplier.setEnabled(false);
+                buttonTransaksi.setEnabled(false);
+                break;
+        }
+
+        this.buttonEnable = buttonEnable;
     }
 
     @SuppressWarnings("unchecked")
@@ -185,35 +222,35 @@ public class FormHalamanUtama extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMerekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMerekActionPerformed
-        FormMerek formMerek = new FormMerek();
+        FormMerek formMerek = new FormMerek(getButtonEnable());
         formMerek.setVisible(true);
         formMerek.userName.setText(userName.getText());
         this.setVisible(false);
     }//GEN-LAST:event_buttonMerekActionPerformed
 
     private void buttonSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupplierActionPerformed
-        FormSupplier formSupplier = new FormSupplier();
+        FormSupplier formSupplier = new FormSupplier(getButtonEnable());
         formSupplier.setVisible(true);
         formSupplier.userName.setText(userName.getText());
         this.setVisible(false);
     }//GEN-LAST:event_buttonSupplierActionPerformed
 
     private void buttonBarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBarangMasukActionPerformed
-        FormBarangMasuk formBarangMasuk = new FormBarangMasuk();
+        FormBarangMasuk formBarangMasuk = new FormBarangMasuk(getButtonEnable());
         formBarangMasuk.setVisible(true);
         formBarangMasuk.userName.setText(userName.getText());
         this.setVisible(false);
     }//GEN-LAST:event_buttonBarangMasukActionPerformed
 
     private void buttonTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTransaksiActionPerformed
-        FormTransaksi formTransaksi = new FormTransaksi();
+        FormTransaksi formTransaksi = new FormTransaksi(getButtonEnable());
         formTransaksi.setVisible(true);
         formTransaksi.userName.setText(userName.getText());
         this.setVisible(false);
     }//GEN-LAST:event_buttonTransaksiActionPerformed
 
     private void buttonLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLaporanActionPerformed
-        FormLaporan formLaporan = new FormLaporan();
+        FormLaporan formLaporan = new FormLaporan(getButtonEnable());
         formLaporan.setVisible(true);
         formLaporan.userName.setText(userName.getText());
         this.setVisible(false);
@@ -226,19 +263,19 @@ public class FormHalamanUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void buttonJenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJenisActionPerformed
-        FormJenis formJenis = new FormJenis();
+        FormJenis formJenis = new FormJenis(getButtonEnable());
         formJenis.setVisible(true);
         formJenis.userName.setText(userName.getText());
         this.setVisible(false);
     }//GEN-LAST:event_buttonJenisActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormHalamanUtama().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FormHalamanUtama().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBarangMasuk;

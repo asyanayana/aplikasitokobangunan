@@ -1,9 +1,19 @@
 package menu;
 
 public class FormLandingPage extends javax.swing.JFrame {
+    private String buttonEnable;
+
+    public String getButtonEnable() {
+        return buttonEnable;
+    }
+
+    public void setButtonEnable(String buttonEnable) {
+        this.buttonEnable = buttonEnable;
+    }
 
     public FormLandingPage() {
         initComponents();
+//        this.buttonEnable = buttonEnable;
     }
 
     @SuppressWarnings("unchecked")
