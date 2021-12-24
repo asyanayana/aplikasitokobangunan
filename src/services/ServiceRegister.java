@@ -13,6 +13,7 @@ public class ServiceRegister {
     private ResultSet resultSet; // Mendeklarasikan Class ResultSet bawaan java untuk keperluan query
     private PreparedStatement preparedStatement; // Mendeklarasikan Class PreparedStatement bawaan java untuk keperluan query
     private String sql; // Mendeklarasikan Class String Untuk Keperluan Query
+    private ServiceEncDec serviceEncDec;
 
     public ServiceRegister() { // Membuat constructor yang merupakan keunggulan dari java OOP
         connection = Conn.getConnection(); // Memanggil class connection
@@ -48,15 +49,16 @@ public class ServiceRegister {
                 return "USERNAME_SAMA";
             } else { // ketika tidak terjadi masalah pada penyimpanan maka fungsi di bawah akan di jalankan
                 try {
+                    serviceEncDec = new ServiceEncDec(password, "Yana");
+                    serviceEncDec.main();
                     sql = "INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)"; // Statment
                     preparedStatement = connection.prepareStatement(sql); // pemanggilan SQL
                     preparedStatement.setString(1, null); // pemanggilan SQL yang pertama
                     preparedStatement.setString(2, name); // pemanggilan SQL yang pertama
                     preparedStatement.setString(3, userName);
                     preparedStatement.setString(4, email);
-                    preparedStatement.setString(5, password);
+                    preparedStatement.setString(5, serviceEncDec.getEncryptedPassword());
                     preparedStatement.setString(6, as);
-                    System.out.println(as);
                     preparedStatement.executeUpdate(); // Eksekusi
                     preparedStatement.close();
                     return "BERHASIL";

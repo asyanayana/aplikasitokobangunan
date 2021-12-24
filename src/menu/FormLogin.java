@@ -20,7 +20,6 @@ public class FormLogin extends javax.swing.JFrame {
     public FormLogin() { // Membuat constructor yang merupakan keunggulan dari java OOP
         initComponents(); // Memanggil Class Java Swing yang telah di buat fungsi sebelumnya
         serviceLogin = new ServiceLogin(); // Memanggil class ServiceRegister dengan membuat variable serviceRegister yang baru
-        System.out.println("Tes " + buttonEnable);
     }
 
     private void emptyText() { // Fungsi untuk mengosongkan TextFiled
@@ -221,10 +220,10 @@ public class FormLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Lengkapi Data", "TB PERSADA", JOptionPane.INFORMATION_MESSAGE);
                 break;
             case "BERHASIL":
-                FormHalamanUtama formHalamanUtama = new FormHalamanUtama();
+                FormHalamanUtama formHalamanUtama = new FormHalamanUtama(getButtonEnable());
                 formHalamanUtama.setVisible(true);
                 formHalamanUtama.userName.setText(textUserName.getText());
-                formHalamanUtama.setButtonEnable(getButtonEnable());
+//                formHalamanUtama.setButtonEnable(getButtonEnable());
                 this.setVisible(false);
                 break;
             case "SALAH":

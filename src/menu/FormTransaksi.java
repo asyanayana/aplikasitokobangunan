@@ -16,8 +16,17 @@ public class FormTransaksi extends javax.swing.JFrame {
     private final String[] dbTableDatas;
     private String[] dbDatas;
     private String timeStamp;
+    private String buttonEnable;
 
-    public FormTransaksi() { // Membuat constructor yang merupakan keunggulan dari java OOP
+    public String getButtonEnable() {
+        return buttonEnable;
+    }
+
+    public void setButtonEnable(String buttonEnable) {
+        this.buttonEnable = buttonEnable;
+    }
+
+    public FormTransaksi(String buttonEnable) { // Membuat constructor yang merupakan keunggulan dari java OOP
         initComponents(); // Memanggil Class Java Swing yang telah di buat fungsi sebelumnya
         textId.setEditable(false);
         serviceData = new ServiceData(); // Memanggil class ServiceRegister dengan membuat variable serviceRegister yang baru
@@ -46,6 +55,7 @@ public class FormTransaksi extends javax.swing.JFrame {
         serviceData.showCombo(cMerek, "merek", "id", "nama_merek");
         serviceData.showCombo(cJenis, "jenis", "id", "nama_jenis");
         serviceData.showCombo(cBarang, "barang", "id", "nama_barang");
+        this.buttonEnable = buttonEnable;
     }
 
     private void emptyText() { // Fungsi untuk mengosongkan TextFiled
@@ -308,7 +318,7 @@ public class FormTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_tableInputMouseClicked
 
     private void buttonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKembaliActionPerformed
-        FormHalamanUtama formHalamanUtama = new FormHalamanUtama();
+        FormHalamanUtama formHalamanUtama = new FormHalamanUtama(getButtonEnable());
         formHalamanUtama.setVisible(true);
         formHalamanUtama.userName.setText(userName.getText());
         this.setVisible(false);
@@ -320,13 +330,13 @@ public class FormTransaksi extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormTransaksi().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FormTransaksi().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonKembali;
