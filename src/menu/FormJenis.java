@@ -80,7 +80,7 @@ public class FormJenis extends javax.swing.JFrame {
         jJudul.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jJudul.setForeground(new java.awt.Color(0, 0, 0));
         jJudul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jJudul.setText("FORM MEREK");
+        jJudul.setText("FORM JENIS");
         panelJudul.add(jJudul);
 
         panelForm.setLayout(new java.awt.GridLayout(0, 2));
@@ -319,7 +319,6 @@ public class FormJenis extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonEdit;
     private javax.swing.JButton buttonHapus;
-    private javax.swing.JButton buttonKembali;
     private javax.swing.JButton buttonKembali1;
     private javax.swing.JButton buttonSimpan;
     private javax.swing.JLabel jId;
