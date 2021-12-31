@@ -18,27 +18,27 @@ public class FormHalamanUtama extends javax.swing.JFrame {
         switch (buttonEnable) {
             case "Admin":
                 buttonBarangMasuk.setEnabled(true);
-                buttonJenis.setEnabled(false);
+                buttonJenis.setEnabled(true);
                 buttonLaporan.setEnabled(true);
                 buttonMerek.setEnabled(true);
                 buttonSupplier.setEnabled(true);
                 buttonTransaksi.setEnabled(true);
                 break;
             case "Gudang":
-                buttonBarangMasuk.setEnabled(false);
-                buttonJenis.setEnabled(false);
-                buttonLaporan.setEnabled(false);
-                buttonMerek.setEnabled(false);
-                buttonSupplier.setEnabled(false);
-                buttonTransaksi.setEnabled(true);
-                break;
-            case "Owner":
                 buttonBarangMasuk.setEnabled(true);
                 buttonJenis.setEnabled(true);
-                buttonLaporan.setEnabled(true);
+                buttonLaporan.setEnabled(false);
                 buttonMerek.setEnabled(true);
                 buttonSupplier.setEnabled(true);
                 buttonTransaksi.setEnabled(true);
+                break;
+            case "Owner":
+                buttonBarangMasuk.setEnabled(false);
+                buttonJenis.setEnabled(false);
+                buttonLaporan.setEnabled(true);
+                buttonMerek.setEnabled(false);
+                buttonSupplier.setEnabled(false);
+                buttonTransaksi.setEnabled(false);
                 break;
             default:
                 buttonBarangMasuk.setEnabled(false);

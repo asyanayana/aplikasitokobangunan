@@ -36,6 +36,7 @@ public class FormMerek extends javax.swing.JFrame {
         dbTableName = "merek";
         dbTableDatas = new String[]{"id", "nama_merek"};
         serviceLoadData.loadDataTable(dbTableName, dbTableDatas, defaultTableModel);
+        this.buttonEnable = buttonEnable;
     }
 
     private void emptyText() { // Fungsi untuk mengosongkan TextFiled
